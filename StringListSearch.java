@@ -22,6 +22,26 @@ public class StringListSearch {
         }
         return -1;
     }
+
+    public static int orderedBinarySearch(ArrayList<String> items, String term){
+        int midpoint = items.size() / 2;
+        int min = 0;
+        int max = items.size()-1;
+        while(max > min){
+            if(items.get(midpoint).compareTo(term) == 0){
+                return midpoint;
+            }
+            else if(items.get(midpoint).compareTo(term) > 0){
+                min = midpoint + 1;
+                midpoint = (min + max) / 2;
+            }
+            else if(items.get(midpoint).compareTo(term) < 0){
+                max = midpoint - 1;
+                midpoint = (min + max) / 2;
+            }
+        }
+        return -1;
+    }
     
     public static void main(String[] args) {
         
