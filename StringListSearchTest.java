@@ -30,9 +30,9 @@ public class StringListSearchTest {
 
         // some positive numbers
         inputItems = new ArrayList<>(Arrays.asList("apple","banana","coconut","dog"));
-        inputTerm = "zebera";
+        inputTerm = "nut";
         expectedOutput = -1;
-        actualOutput = StringListSearch.unorderedSearch(inputItems, inputTerm);
+        actualOutput = StringListSearch.orderedSearch(inputItems, inputTerm);
         assertEquals(expectedOutput, actualOutput);
     }
 
@@ -44,10 +44,10 @@ public class StringListSearchTest {
         int actualOutput;
 
         // some positive numbers
-        inputItems = new ArrayList<>(Arrays.asList("apple","banana","coconut","dog"));
-        inputTerm = "nuts";
-        expectedOutput = -1;
-        actualOutput = StringListSearch.unorderedSearch(inputItems, inputTerm);
+        inputItems = new ArrayList<>(Arrays.asList("apple","banana","coconut","dog","elephant","eli"));
+        inputTerm = "eli";
+        expectedOutput = 5;
+        actualOutput = StringListSearch.orderedBinarySearch(inputItems, inputTerm);
         assertEquals(expectedOutput, actualOutput);
     }
 }

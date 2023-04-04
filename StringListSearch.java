@@ -27,15 +27,15 @@ public class StringListSearch {
         int midpoint = items.size() / 2;
         int min = 0;
         int max = items.size()-1;
-        while(max > min){
-            if(items.get(midpoint).compareTo(term) == 0){
+        while(max >= min){
+            if(items.get(midpoint).equals(term)){
                 return midpoint;
             }
-            else if(items.get(midpoint).compareTo(term) > 0){
+            else if(items.get(midpoint).compareTo(term) < 0){
                 min = midpoint + 1;
                 midpoint = (min + max) / 2;
             }
-            else if(items.get(midpoint).compareTo(term) < 0){
+            else if(items.get(midpoint).compareTo(term) > 0){
                 max = midpoint - 1;
                 midpoint = (min + max) / 2;
             }
